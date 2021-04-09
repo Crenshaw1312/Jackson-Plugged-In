@@ -51,3 +51,10 @@ exports.imageWH = async (url) => {
     })
     return res
 }
+
+// Get song
+exports.getSong = async (search) => {
+    let res = await got(`https://www.musixmatch.com/search/${search}`)
+    res = res.body.match(/\{.+(\.png|\.jpe?g)"\}\}/i)[0].split(",\"primary_genres\"")[0] + "}"
+    return JSON.parse(res)
+}

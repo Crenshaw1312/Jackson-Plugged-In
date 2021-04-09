@@ -3,7 +3,14 @@
 > See HurricaneJackson for some more info
 
 ## Commands
-You'll see all the commands for Jackson in the commands folder, each one has a description on how to use it if needed.
+You'll see all the commands for Jackson in the commands folder, each one has a description on how to use it.
 
-## Dependancies
-1. (npm) got
+## Outside Resources
+### NPMs
+1. [got](https://www.npmjs.com/package/got), reddit mainly
+2. [youtube-scrape](https://www.npmjs.com/package/scrape-youtube), YouTube things
+3. [querystring]()
+### APIs
+1. [song.link](https://song.link)
+2. [truthordarebot.xyz](https://truthordarebot.xyz/), made by WaterNinja101
+#2093

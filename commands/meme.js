@@ -19,6 +19,9 @@ module.exports = {
                     url: post.url_overridden_by_dest,
                     width: wh.width,
                     height: wh.height
+                },
+                footer: {
+                    text: `👍 ${post.ups} 💬 ${post.num_comments} - ${post.subreddit_name_prefixed}`
                 }
             }
         }

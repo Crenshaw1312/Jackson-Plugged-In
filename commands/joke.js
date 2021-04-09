@@ -14,7 +14,10 @@ module.exports = {
                 type: "rich",
                 title: post.title,
                 color: 0x4B0082,
-                description: `||${post.selftext}||`
+                description: `||${post.selftext} ||`,
+                footer: {
+                    text: `👍 ${post.ups} 💬 ${post.num_comments} - ${post.subreddit_name_prefixed}`
+                }
             }
         }
 

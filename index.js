@@ -1,13 +1,22 @@
 const { Plugin } = require('powercord/entities');
 const commands = require('./commands');
+const Settings = require('./Settings');
 
 module.exports = class Jackson extends Plugin {
+
     startPlugin () {
         this.registerMain();
+
+        powercord.api.settings.registerSettings('Jackson-Plugged-In', {
+          category: this.entityID,
+          label: 'Jackson',
+          render: Settings
+        });
     }
 
     pluginWillUnload () {
-        powercord.api.commands.unregisterCommand('jack');
+      powercord.api.settings.unregisterSettings('Jackson-Plugged-In')
+      powercord.api.commands.unregisterCommand('jack')
     }
 
     registerMain () {
@@ -17,17 +26,17 @@ module.exports = class Jackson extends Plugin {
           usage: '{c} <truth|dare> [rating]',
           executor: (args) => {
             // Running the subcommand
-            const subcommand = commands[args[0]];
+            const subcommand = commands[args[0]]
             // invalid subcommand
             if (!subcommand) {
               return {
                 send: false,
-                result: `\`${args[0]}\` is not a valid subcommand. Specify one of ${Object.keys(commands).map(cmd => `\`${cmd}\``).join(', ')}.`
+                result: `\`${args[0] || " "}\` is not a valid subcommand`
               };
             }
             
             // actually running the command
-            return subcommand.executor(args.slice(1), this);
+            return subcommand.executor(args.slice(1), this)
           },
           // autocomplete table
           autocomplete: (args) => {
@@ -43,7 +52,7 @@ module.exports = class Jackson extends Plugin {
               return false;
             }
     
-            return subcommand.autocomplete(args.slice(1), this.settings);
+            return subcommand.autocomplete(args.slice(1), this.settings)
           }
         });
       }

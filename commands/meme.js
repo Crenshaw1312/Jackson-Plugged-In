@@ -3,11 +3,10 @@ const {getRedditPost, imageWH} = require("../funcs");
 module.exports = {
     command: "meme",
     description: "Self Explanatory",
-    executor: async (args, main) => {
+    executor: async () => {
 
         const subReddits = ["dankmeme", "meme", "me_irl"];
         let post = await getRedditPost(subReddits);
-        console.log(post)
         let wh = await imageWH(post.url_overridden_by_dest)
 
         return {

@@ -5,7 +5,7 @@ const querystring = require("querystring");
 module.exports = {
     command: "songav",
     description: "Results: All platforms, linked, to where the song is available",
-    executor: async (args, main) => {
+    executor: async (args) => {
         if (!args[0]) return
 
         // search youtube

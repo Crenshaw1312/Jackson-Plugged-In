@@ -4,7 +4,7 @@ const {imageWH} = require("../funcs");
 module.exports = {
     command: "animal",
     description: "Usage: [fox|panda|koala|cat|dog|bird] [image]",
-    executor: async (args, main) => {
+    executor: async (args) => {
             // setup
     let options = ["fox", "cat", "koala", "panda", "bird", "dog"]
     let option = false;

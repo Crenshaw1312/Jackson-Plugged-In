@@ -4,7 +4,7 @@ const { choose } = require("../funcs");
 module.exports = {
     command: "truth",
     description: "Allowed Args: [r|pg13|pg]",
-    executor: async (args, main) => {
+    executor: async (args) => {
 
         let rating = await choose(args, ["pg", "pg13", "r"], null);
         let question = await get(`https://api.truthordarebot.xyz/dare?rating=${rating}`)

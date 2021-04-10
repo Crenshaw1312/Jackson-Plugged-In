@@ -4,7 +4,7 @@ const { getSong, imageWH } = require("../funcs");
 module.exports = {
     command: "lyrics",
     description: "Usage: <name> <artist>",
-    executor: async (args, main) => {
+    executor: async (args) => {
 
         if (!args[0]) return
 

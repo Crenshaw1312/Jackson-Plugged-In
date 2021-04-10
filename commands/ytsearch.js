@@ -4,7 +4,7 @@ const { choose } = require("../funcs");
 module.exports = {
     command: "ytsearch",
     description: "Args: [playlist|live|video|creator]",
-    executor: async (args, main) => {
+    executor: async (args) => {
         if (!args[0]) return
         let options = {
             "--playlist": "playlists",

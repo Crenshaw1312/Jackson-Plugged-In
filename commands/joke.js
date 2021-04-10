@@ -3,7 +3,7 @@ const {getRedditPost} = require("../funcs");
 module.exports = {
     command: "joke",
     description: "Self Explanatory",
-    executor: async (args, main) => {
+    executor: async () => {
 
         const subReddits = ["jokes", "dadjokes", "antijokes", "meanjokes"]
         let post = await getRedditPost(subReddits);

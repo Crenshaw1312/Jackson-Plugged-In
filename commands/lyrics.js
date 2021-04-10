@@ -3,7 +3,7 @@ const { getSong, imageWH } = require("../funcs");
 
 module.exports = {
     command: "lyrics",
-    description: "Self Explanatory",
+    description: "Usage: <name> <artist>",
     executor: async (args, main) => {
 
         if (!args[0]) return
@@ -16,8 +16,8 @@ module.exports = {
         // Get lyrics
         let res = await got(data.track_share_url.split("?utm")[0]).then(res => res.body)
         let lyrics = res.split('<p class="mxm-lyrics__content "><span class="lyrics__content__')[1].split("</span>")[0].split(">")[1].replace("...", "") + "\n" + res.split('</div></div><p class="mxm-lyrics__content "><span class="lyrics__content__')[1].split("</span>")[0].split(">")[1]
-        console.log(res)
-        console.log(lyrics)
+
+
         // Shorten if too long
         if (lyrics.length < 2040) {
             lyrics = lyrics.slice(0, 2040) + "..."
